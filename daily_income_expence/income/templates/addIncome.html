@@ -1,0 +1,17 @@
+{%extends 'sidebar.html'%}
+{%block body%}
+<h1>add income your user in a page</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    <table border='1'>
+        {{form.as_table}}
+        <tr>
+            <td>
+                <input type="submit" value="save">
+                <input type="reset" value="reset">
+            </td>
+        </tr>
+    </table>
+</form>
+{%endblock%}

@@ -1,0 +1,28 @@
+{%extends 'sidebar.html'%}
+{%block body%}
+<h1>this is expence list </h1>
+
+<table border="1" cellpadding="10">
+    <tr>
+        <th>User Id</th>
+        <th>User Name</th>
+        <th>Expence</th>
+        <th>Expence Type</th>
+        {% comment %} <th>Expence Date</th> {% endcomment %}
+        <th>Description</th>
+        <th colspan="2">Actions</th>
+    </tr>
+    {%for j in expo%}
+    <tr>
+        <td>{{j.id}}</td>
+        <td>{{j.User}}</td>
+        <td>{{j.expence}}</td>
+        <td>{{j.expense_type}}</td>
+        {% comment %} <td>{{j.expence_date}}</td> {% endcomment %}
+        <td>{{j.description}}</td>
+        <td><a href="{%url 'expence:edit' j.id%}">Update</a></td>
+        <td><a href="{%url 'expence:remove' j.id%}">Delete</a></td>
+    </tr>
+    {% endfor %}
+</table>
+{%endblock%}
